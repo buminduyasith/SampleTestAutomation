@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestAutomation", "SampleTestAutomation\SampleTestAutomation.csproj", "{4857F229-4CF2-488D-9840-51BAFF5255A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleTestAutomation", "SampleTestAutomation\SampleTestAutomation.csproj", "{4857F229-4CF2-488D-9840-51BAFF5255A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTestAutomationV2", "SampleTestAutomationV2\SampleTestAutomationV2.csproj", "{47303BA2-072E-49AF-ADE6-CB4C7B8994E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4857F229-4CF2-488D-9840-51BAFF5255A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4857F229-4CF2-488D-9840-51BAFF5255A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4857F229-4CF2-488D-9840-51BAFF5255A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47303BA2-072E-49AF-ADE6-CB4C7B8994E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47303BA2-072E-49AF-ADE6-CB4C7B8994E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47303BA2-072E-49AF-ADE6-CB4C7B8994E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47303BA2-072E-49AF-ADE6-CB4C7B8994E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
