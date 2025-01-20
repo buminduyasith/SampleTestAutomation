@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SampleTestAutomationV2
+namespace SampleTestAutomationV2.Utils
 {
     public static class BrowserUtilities
     {
         public static IWebDriver LaunchBrowser()
         {
             var chromeOptions = new ChromeOptions();
-            //chromeOptions.AddArgument("--start-maximized");
-            chromeOptions.AddArguments("--headless"); // Runs Chrome in headless mode
+            chromeOptions.AddArgument("--start-maximized");
+           // chromeOptions.AddArguments("--headless"); // Runs Chrome in headless mode
             chromeOptions.AddArguments("--disable-gpu"); // Optional: Ensures compatibility in headless mode
             chromeOptions.AddArguments("--no-sandbox"); // Optional: Useful for CI/CD pipelines
             chromeOptions.AddArguments("--disable-dev-shm-usage"); // Optional: Resolves resource limits in containers

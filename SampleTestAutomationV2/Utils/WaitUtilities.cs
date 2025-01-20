@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SampleTestAutomationV2
+namespace SampleTestAutomationV2.Utils
 {
     public static class WaitUtilities
     {

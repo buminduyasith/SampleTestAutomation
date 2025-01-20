@@ -1,23 +1,17 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SampleTestAutomationV2.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SampleTestAutomationV2
+namespace SampleTestAutomationV2.Pages
 {
-    public class HomePage
+    public class HomePage : BasePage
     {
-        private readonly IWebDriver _driver;
-        private readonly WebDriverWait _wait;
-
-        public HomePage(IWebDriver driver)
-        {
-            _driver = driver;
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-        }
+        public HomePage() : base() { }
 
         // Locators
         private By LoginLink => By.Id("login2");
@@ -27,22 +21,22 @@ namespace SampleTestAutomationV2
         // Methods
         public void NavigateToHomePage(string url)
         {
-            _driver.Navigate().GoToUrl(url);
+            Driver.Navigate().GoToUrl(url);
         }
 
         public void ClickLoginLink()
         {
-            _wait.Until(d => d.FindElement(LoginLink)).Click();
+            Wait.Until(d => d.FindElement(LoginLink)).Click();
         }
 
         public void ClickSignUpLink()
         {
-            _wait.Until(d => d.FindElement(SignUpLink)).Click();
+            Wait.Until(d => d.FindElement(SignUpLink)).Click();
         }
 
         public void ClickProduct(string productName)
         {
-            _wait.Until(d => d.FindElement(ProductLink(productName))).Click();
+            Wait.Until(d => d.FindElement(ProductLink(productName))).Click();
         }
     }
 }

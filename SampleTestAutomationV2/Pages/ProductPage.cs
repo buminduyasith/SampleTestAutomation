@@ -5,19 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SampleTestAutomationV2.Base;
 
-namespace SampleTestAutomationV2
+namespace SampleTestAutomationV2.Pages
 {
-    public class ProductPage
+    public class ProductPage : BasePage
     {
-        private readonly IWebDriver _driver;
-        private readonly WebDriverWait _wait;
-
-        public ProductPage(IWebDriver driver)
-        {
-            _driver = driver;
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-        }
+        public ProductPage() : base() { }
 
         // Locators
         private By AddToCartButton => By.XPath("//a[text()='Add to cart']");
@@ -26,12 +20,12 @@ namespace SampleTestAutomationV2
         // Methods
         public string GetProductTitle()
         {
-            return _wait.Until(d => d.FindElement(ProductTitle)).Text;
+            return Wait.Until(d => d.FindElement(ProductTitle)).Text;
         }
 
         public void ClickAddToCart()
         {
-            _wait.Until(d => d.FindElement(AddToCartButton)).Click();
+            Wait.Until(d => d.FindElement(AddToCartButton)).Click();
         }
     }
 }
