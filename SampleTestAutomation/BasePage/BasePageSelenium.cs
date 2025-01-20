@@ -34,6 +34,11 @@ namespace SampleTestAutomation.BasePage
             Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
         }
 
+        public void NavigateTo(string url)
+        {
+            Driver.Navigate().GoToUrl(url);
+        }
+
         public void Dispose()
         {
             Driver?.Quit();
