@@ -7,8 +7,8 @@ namespace SampleTestAutomation.BasePage
 {
     public abstract class BasePageSelenium : IDisposable
     {
-        protected IWebDriver Driver { get; private set; }
-        protected WebDriverWait Wait { get; private set; }
+        public IWebDriver Driver { get; private set; }
+        public WebDriverWait Wait { get; private set; }
 
         public BasePageSelenium()
         {
@@ -19,7 +19,7 @@ namespace SampleTestAutomation.BasePage
         {
             // Initialize Chrome WebDriver without specifying driver path
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("--headless"); // Runs Chrome in headless mode
+            //chromeOptions.AddArguments("--headless"); // Runs Chrome in headless mode
             chromeOptions.AddArguments("--disable-gpu"); // Optional: Ensures compatibility in headless mode
             chromeOptions.AddArguments("--no-sandbox"); // Optional: Useful for CI/CD pipelines
             chromeOptions.AddArguments("--disable-dev-shm-usage"); // Optional: Resolves resource limits in containers
