@@ -28,7 +28,7 @@ namespace SampleTestAutomation.Tests
         public void AddToCart_ShouldAddProductToCart()
         {
             _productPage.Driver.Navigate().GoToUrl("https://www.demoblaze.com/prod.html?idp_=1");
-            _productPage.AddToCart();
+            _productPage.AddProductToCart();
             Assert.Contains("Product added", _productPage.Driver.SwitchTo().Alert().Text);
         }
     }

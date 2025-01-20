@@ -12,16 +12,34 @@ namespace SampleTestAutomation.Pages
     {
         public ProductPage() : base() { }
 
-        public string GetProductPrice()
+        // Locators
+        private By ProductName => By.CssSelector(".name");
+        private By ProductPrice => By.CssSelector(".price-container");
+        private By ProductDescription => By.CssSelector(".description");
+        private By AddToCartButton => By.CssSelector(".btn-success"); // "Add to cart" button
+
+        // Methods to interact with the product page
+        public string GetProductName()
         {
-            var priceElement = Driver.FindElement(By.CssSelector("h3.price-container"));
-            return priceElement.Text;
+            string productName = Driver.FindElement(ProductName).Text;
+            return productName;
         }
 
-        public void AddToCart()
+        public string GetProductPrice()
         {
-            var addToCartButton = Driver.FindElement(By.LinkText("Add to cart"));
-            addToCartButton.Click();
+            string productPrice = Driver.FindElement(ProductPrice).Text;
+            return productPrice;
+        }
+
+        public string GetProductDescription()
+        {
+            string productDescription = Driver.FindElement(ProductDescription).Text;
+            return productDescription;
+        }
+
+        public void AddProductToCart()
+        {
+            Driver.FindElement(AddToCartButton).Click();
         }
     }
 }

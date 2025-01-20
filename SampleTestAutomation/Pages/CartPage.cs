@@ -12,16 +12,27 @@ namespace SampleTestAutomation.Pages
     {
         public CartPage() : base() { }
 
+        // Locators
+        private By CartItems => By.CssSelector(".success"); // Items in the cart
+        private By ProductNameInCart => By.CssSelector(".success td:nth-child(2)"); // Product name in the cart
+
+        // Methods to interact with the cart page
         public void NavigateToCart()
         {
-            var cartLink = Driver.FindElement(By.Id("cartur"));
-            cartLink.Click();
+            Driver.FindElement(By.XPath("//a[@onclick='addToCart(1)']")).Click();
         }
 
         public bool IsProductInCart(string productName)
         {
-            var productInCart = Driver.FindElement(By.XPath($"//td[contains(text(), '{productName}')]"));
-            return productInCart != null;
+            try
+            {
+                var productInCart = Driver.FindElement(ProductNameInCart).Text;
+                return productInCart.Contains(productName);
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
         }
     }
 }
